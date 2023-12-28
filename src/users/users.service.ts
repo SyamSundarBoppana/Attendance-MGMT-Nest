@@ -8,8 +8,7 @@ export class UsersService {
   constructor(private prisma: PrismaService) {}
 
   async createUser(userData: CreateUserDto){
-    const user = await this.prisma.user.create({ data: userData });
-    return user;
+    return await this.prisma.user.create({ data: userData });
   }
 
   async getUsers() {
