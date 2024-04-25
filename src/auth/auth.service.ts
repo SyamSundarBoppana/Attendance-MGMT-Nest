@@ -21,8 +21,7 @@ export class AuthService {
     if (login) {
         const payload = {sub:user.id, email:user.email}
         const accessToken = this.jwtService.sign({ payload }, { privateKey: TOKEN_SECRET.accessToken });
-      return `Welcome ${user.name}
-      access_token:${accessToken}`;
+      return `access_token:${accessToken}`;
     }
     return 'Invalid user credentails';
   }
